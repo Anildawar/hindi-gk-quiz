@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102a43">
+<title>Hindi Quiz Hub | GK & MP GK</title>
+<style>
+:root{--navy:#102a43;--blue:#1769aa;--cyan:#e7f6ff;--orange:#ff9f43;--bg:#f4f7fb;--ink:#172b4d;--muted:#62748a;--green:#15803d;--red:#b91c1c}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;background:var(--bg);color:var(--ink)}header{background:linear-gradient(125deg,#102a43,#1769aa);color:white;padding:24px 18px 34px}.wrap{max-width:980px;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-weight:850;font-size:1.2rem;letter-spacing:.2px}.pill{border:1px solid #ffffff70;border-radius:99px;padding:6px 10px;font-size:.8rem}.hero{padding:26px 0 8px}.hero h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.15;margin:0 0 10px}.hero p{max-width:620px;color:#e2efff;margin:0;line-height:1.7}.main{padding:0 16px 40px;margin-top:-14px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat,.panel,.category{background:white;border:1px solid #e3eaf2;border-radius:18px;box-shadow:0 8px 24px #17365d0a}.stat{padding:15px;text-align:center}.stat strong{display:block;font-size:1.3rem;color:var(--blue)}.stat span{font-size:.82rem;color:var(--muted)}.section-title{margin:27px 0 12px;font-size:1.25rem}.categories{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.category{padding:17px;text-align:left;cursor:pointer;color:var(--ink);transition:.15s;border:2px solid transparent}.category:hover,.category.active{border-color:var(--blue);transform:translateY(-1px)}.emoji{font-size:1.7rem}.category h3{margin:8px 0 4px;font-size:1rem}.category p{margin:0;color:var(--muted);font-size:.85rem;line-height:1.5}.panel{margin-top:18px;padding:20px}.quiz-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.tag{background:var(--cyan);color:#14598b;padding:6px 10px;border-radius:99px;font-size:.8rem;font-weight:700}.progress{height:8px;background:#e7edf4;border-radius:99px;overflow:hidden;margin:17px 0}.progress div{height:100%;background:linear-gradient(90deg,#1769aa,#43b3e8);width:0;transition:width .2s}.question{font-size:1.15rem;font-weight:750;line-height:1.6;margin:12px 0 18px}.options{display:grid;gap:10px}.option{background:#fff;border:1.5px solid #d8e1ec;border-radius:12px;padding:13px 14px;text-align:left;font:inherit;color:var(--ink);cursor:pointer}.option:hover:not(:disabled){border-color:var(--blue);background:#f3faff}.option.correct{border-color:var(--green);background:#edfdf2}.option.wrong{border-color:var(--red);background:#fff1f1}.option:disabled{cursor:default}.feedback{padding:12px;border-radius:12px;margin-top:13px;line-height:1.55}.feedback.good{background:#edfdf2;color:#166534}.feedback.bad{background:#fff1f1;color:#991b1b}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:17px}.btn{border:0;border-radius:11px;padding:12px 16px;font:inherit;font-weight:750;cursor:pointer}.primary{background:var(--blue);color:white}.secondary{background:#e9f0f7;color:var(--ink)}.btn:disabled{opacity:.5;cursor:not-allowed}.hidden{display:none!important}.result{text-align:center;padding:18px 4px}.result .big{font-size:3rem}.result h2{margin:5px}.result p{color:var(--muted);line-height:1.6}.footer{text-align:center;color:var(--muted);font-size:.82rem;padding:20px}.small{font-size:.85rem;color:var(--muted)}@media(min-width:700px){.categories{grid-template-columns:repeat(4,1fr)}.main{padding-left:22px;padding-right:22px}.panel{padding:25px}.option{padding:15px 17px}}@media(max-width:420px){.stats{gap:7px}.stat{padding:12px 5px}.stat span{font-size:.75rem}.categories{gap:9px}.category{padding:13px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="top"><div class="brand">📝 Hindi Quiz Hub</div><span class="pill">FREE PRACTICE</span></div>
+  <div class="hero"><h1>ज्ञान बढ़ाएँ,<br>हर परीक्षा में आगे जाएँ!</h1><p>Hindi GK, MP GK और प्रतियोगी परीक्षाओं के लिए MCQ अभ्यास करें। जवाब चुनें, अपना स्कोर देखें और रोज़ बेहतर बनें।</p></div>
+</div></header>
+<main class="main wrap">
+  <section class="stats" aria-label="Quiz stats">
+    <div class="stat"><strong id="totalStat">20+</strong><span>अभ्यास प्रश्न</span></div>
+    <div class="stat"><strong>4</strong><span>विषय श्रेणियाँ</span></div>
+    <div class="stat"><strong>100%</strong><span>मुफ़्त अभ्यास</span></div>
+  </section>
+  <h2 class="section-title">अपनी श्रेणी चुनें</h2>
+  <section class="categories" id="categories">
+    <button class="category active" data-cat="all"><span class="emoji">🌟</span><h3>मिक्स GK</h3><p>विभिन्न विषयों के सवाल</p></button>
+    <button class="category" data-cat="mp"><span class="emoji">🏛️</span><h3>MP GK</h3><p>मध्य प्रदेश सामान्य ज्ञान</p></button>
+    <button class="category" data-cat="india"><span class="emoji">🇮🇳</span><h3>भारत GK</h3><p>इतिहास, भूगोल और संविधान</p></button>
+    <button class="category" data-cat="science"><span class="emoji">🔬</span><h3>विज्ञान</h3><p>बेसिक साइंस के प्रश्न</p></button>
+  </section>
+  <section class="panel" id="quizPanel">
+    <div class="quiz-head"><span class="tag" id="categoryTag">मिक्स GK</span><span class="small" id="counter">प्रश्न 1 / 20</span><span class="tag" id="scoreTag">स्कोर: 0</span></div>
+    <div class="progress"><div id="progressBar"></div></div>
+    <div id="quizContent">
+      <div class="question" id="question">प्रश्न लोड हो रहा है…</div>
+      <div class="options" id="options"></div>
+      <div id="feedback" class="hidden" aria-live="polite"></div>
+      <div class="actions"><button class="btn secondary" id="restartBtn">↻ फिर से शुरू करें</button><button class="btn primary" id="nextBtn" disabled>अगला प्रश्न →</button></div>
+    </div>
+    <div id="result" class="result hidden"></div>
+  </section>
+  <p class="footer">© <span id="year"></span> Hindi Quiz Hub · सीखें, अभ्यास करें, आगे बढ़ें।<br>नोट: यह शुरुआती डेमो है; परीक्षा से पहले महत्वपूर्ण तथ्यों को विश्वसनीय स्रोत से जाँचें।</p>
+</main>
+<script>
+const questions = [
+{cat:"india",q:"भारत का संविधान कब लागू हुआ?",o:["15 अगस्त 1947","26 जनवरी 1950","26 नवंबर 1949","2 अक्टूबर 1950"],a:1,e:"भारत का संविधान 26 जनवरी 1950 को लागू हुआ। 26 नवंबर 1949 को संविधान अंगीकृत किया गया था।"},
+{cat:"mp",q:"मध्य प्रदेश की राजधानी कौन-सी है?",o:["इंदौर","जबलपुर","भोपाल","ग्वालियर"],a:2,e:"भोपाल मध्य प्रदेश की राजधानी है।"},
+{cat:"science",q:"पौधे प्रकाश संश्लेषण के दौरान मुख्य रूप से कौन-सी गैस लेते हैं?",o:["ऑक्सीजन","कार्बन डाइऑक्साइड","नाइट्रोजन","हाइड्रोजन"],a:1,e:"प्रकाश संश्लेषण में पौधे कार्बन डाइऑक्साइड और पानी का उपयोग करके भोजन बनाते हैं।"},
+{cat:"india",q:"भारत का राष्ट्रीय पशु कौन है?",o:["एशियाई सिंह","हाथी","बंगाल टाइगर","तेंदुआ"],a:2,e:"भारत का राष्ट्रीय पशु बाघ (रॉयल बंगाल टाइगर) है।"},
+{cat:"mp",q:"साँची स्तूप मध्य प्रदेश के किस जिले में स्थित है?",o:["रायसेन","धार","रीवा","उज्जैन"],a:0,e:"साँची स्तूप मध्य प्रदेश के रायसेन जिले में स्थित है।"},
+{cat:"science",q:"पानी का रासायनिक सूत्र क्या है?",o:["CO₂","O₂","H₂O","NaCl"],a:2,e:"पानी के एक अणु में दो हाइड्रोजन और एक ऑक्सीजन परमाणु होता है: H₂O।"},
+{cat:"india",q:"भारत के राष्ट्रगान 'जन गण मन' के रचयिता कौन हैं?",o:["बंकिमचंद्र चट्टोपाध्याय","रवीन्द्रनाथ टैगोर","मुंशी प्रेमचंद","सरोजिनी नायडू"],a:1,e:"'जन गण मन' रवीन्द्रनाथ टैगोर ने लिखा था।"},
+{cat:"mp",q:"मध्य प्रदेश का गठन वर्तमान स्वरूप में कब हुआ?",o:["1 नवंबर 1956","15 अगस्त 1947","26 जनवरी 1950","1 मई 1960"],a:0,e:"राज्यों के पुनर्गठन के बाद मध्य प्रदेश का गठन 1 नवंबर 1956 को हुआ।"},
+{cat:"science",q:"मानव शरीर में रक्त पंप करने वाला अंग कौन-सा है?",o:["फेफड़ा","यकृत","हृदय","गुर्दा"],a:2,e:"हृदय रक्त को पूरे शरीर में पंप करता है।"},
+{cat:"india",q:"भारतीय संसद के दो सदन कौन-से हैं?",o:["विधानसभा और परिषद","लोकसभा और राज्यसभा","लोकसभा और विधानसभा","राज्यसभा और पंचायत"],a:1,e:"भारतीय संसद राष्ट्रपति, लोकसभा और राज्यसभा से मिलकर बनती है।"},
+{cat:"mp",q:"भीमबेटका शैलाश्रय किसके लिए प्रसिद्ध हैं?",o:["समुद्री व्यापार","प्रागैतिहासिक शैलचित्र","बौद्ध विश्वविद्यालय","मुगल उद्यान"],a:1,e:"भीमबेटका के शैलाश्रय प्रागैतिहासिक चित्रों के लिए प्रसिद्ध हैं।"},
+{cat:"science",q:"सामान्य वायुदाब पर पानी का क्वथनांक कितना है?",o:["0°C","50°C","100°C","150°C"],a:2,e:"समुद्र तल के आसपास सामान्य वायुदाब पर पानी लगभग 100°C पर उबलता है।"},
+{cat:"india",q:"भारत का राष्ट्रीय गीत कौन-सा है?",o:["सारे जहाँ से अच्छा","वन्दे मातरम्","जन गण मन","ऐ मेरे वतन के लोगों"],a:1,e:"'वन्दे मातरम्' भारत का राष्ट्रीय गीत है; इसके रचयिता बंकिमचंद्र चट्टोपाध्याय हैं।"},
+{cat:"mp",q:"उज्जैन किस नदी के किनारे बसा है?",o:["नर्मदा","क्षिप्रा","ताप्ती","बेतवा"],a:1,e:"उज्जैन क्षिप्रा नदी के किनारे स्थित है।"},
+{cat:"science",q:"सौरमंडल का सबसे बड़ा ग्रह कौन-सा है?",o:["पृथ्वी","शनि","बृहस्पति","मंगल"],a:2,e:"बृहस्पति सौरमंडल का सबसे बड़ा ग्रह है।"},
+{cat:"india",q:"भारत के प्रथम राष्ट्रपति कौन थे?",o:["डॉ. राजेंद्र प्रसाद","डॉ. सर्वपल्ली राधाकृष्णन","जवाहरलाल नेहरू","डॉ. जाकिर हुसैन"],a:0,e:"डॉ. राजेंद्र प्रसाद भारत के प्रथम राष्ट्रपति थे।"},
+{cat:"mp",q:"मध्य प्रदेश उच्च न्यायालय की मुख्य पीठ कहाँ है?",o:["भोपाल","इंदौर","जबलपुर","ग्वालियर"],a:2,e:"मध्य प्रदेश उच्च न्यायालय की मुख्य पीठ जबलपुर में है; इंदौर और ग्वालियर में खंडपीठें हैं।"},
+{cat:"science",q:"विटामिन C का अच्छा स्रोत कौन-सा है?",o:["नींबू","सफेद चावल","मक्खन","नमक"],a:0,e:"नींबू और अन्य खट्टे फल विटामिन C के अच्छे स्रोत हैं।"},
+{cat:"india",q:"भारतीय संविधान की प्रारूप समिति के अध्यक्ष कौन थे?",o:["सरदार पटेल","डॉ. बी. आर. आंबेडकर","डॉ. राजेंद्र प्रसाद","सी. राजगोपालाचारी"],a:1,e:"डॉ. भीमराव आंबेडकर संविधान की प्रारूप समिति के अध्यक्ष थे।"},
+{cat:"mp",q:"कान्हा राष्ट्रीय उद्यान मुख्य रूप से किन जिलों में फैला है?",o:["मंडला और बालाघाट","रीवा और सतना","धार और झाबुआ","भिंड और मुरैना"],a:0,e:"कान्हा राष्ट्रीय उद्यान मुख्यतः मंडला और बालाघाट जिलों में स्थित है।"}
+];
+const names={all:"मिक्स GK",mp:"MP GK",india:"भारत GK",science:"विज्ञान"};
+let category="all",list=[],index=0,score=0,answered=false;
+const $=id=>document.getElementById(id);
+function shuffle(arr){return [...arr].sort(()=>Math.random()-.5)}
+function start(){list=shuffle(questions.filter(q=>category==="all"||q.cat===category));index=0;score=0;answered=false;$("result").classList.add("hidden");$("quizContent").classList.remove("hidden");$("categoryTag").textContent=names[category];$("scoreTag").textContent="स्कोर: 0";render()}
+function render(){answered=false;const item=list[index];$("counter").textContent=`प्रश्न ${index+1} / ${list.length}`;$("progressBar").style.width=`${index/list.length*100}%`;$("question").textContent=item.q;$("options").innerHTML="";$("feedback").className="hidden";$("feedback").textContent="";$("nextBtn").disabled=true;$("nextBtn").textContent=index===list.length-1?"परिणाम देखें →":"अगला प्रश्न →";item.o.forEach((option,i)=>{const b=document.createElement("button");b.className="option";b.textContent=String.fromCharCode(65+i)+". "+option;b.addEventListener("click",()=>choose(i));$("options").appendChild(b)})}
+function choose(i){if(answered)return;answered=true;const item=list[index];const buttons=[...$("options").children];buttons.forEach((b,j)=>{b.disabled=true;if(j===item.a)b.classList.add("correct");if(j===i&&i!==item.a)b.classList.add("wrong")});if(i===item.a){score++;$("feedback").className="feedback good";$("feedback").textContent="✓ सही जवाब! "+item.e}else{$("feedback").className="feedback bad";$("feedback").textContent="✗ सही उत्तर: "+item.o[item.a]+". "+item.e}$("scoreTag").textContent="स्कोर: "+score;$("nextBtn").disabled=false;$("progressBar").style.width=`${(index+1)/list.length*100}%`}
+function next(){if(!answered)return;if(index<list.length-1){index++;render()}else showResult()}
+function showResult(){ $("quizContent").classList.add("hidden");$("result").classList.remove("hidden");$("counter").textContent="टेस्ट पूरा हुआ";$("progressBar").style.width="100%";const pct=Math.round(score/list.length*100);let msg=pct>=80?"बहुत बढ़िया! आपकी तैयारी अच्छी चल रही है।":pct>=50?"अच्छा प्रयास! थोड़ा और अभ्यास करें।":"अभ्यास जारी रखें—हर टेस्ट से सीख मिलती है।";$("result").innerHTML=`<div class="big">${pct>=80?"🏆":pct>=50?"👏":"📚"}</div><h2>आपका परिणाम</h2><p><strong style="font-size:1.5rem;color:var(--blue)">${score} / ${list.length}</strong> सही जवाब · ${pct}%</p><p>${msg}</p><button class="btn primary" id="againBtn">फिर से टेस्ट दें ↻</button>`;$("againBtn").addEventListener("click",start)}
+document.querySelectorAll(".category").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".category").forEach(x=>x.classList.remove("active"));b.classList.add("active");category=b.dataset.cat;start()}));
+$("nextBtn").addEventListener("click",next);$("restartBtn").addEventListener("click",start);$("year").textContent=new Date().getFullYear();start();
+</script>
+</body></html>
